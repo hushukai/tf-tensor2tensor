@@ -21,9 +21,10 @@ from __future__ import print_function
 
 import functools
 import os
+
+from absl import flags
 import numpy as np
 import six
-
 from tensor2tensor.data_generators import generator_utils
 from tensor2tensor.data_generators import image_utils
 from tensor2tensor.data_generators import problem
@@ -33,10 +34,9 @@ from tensor2tensor.layers import common_video
 from tensor2tensor.layers import modalities
 from tensor2tensor.utils import metrics
 from tensor2tensor.utils import video_metrics
-
 import tensorflow as tf
 
-flags = tf.flags
+
 FLAGS = flags.FLAGS
 
 flags.DEFINE_bool(

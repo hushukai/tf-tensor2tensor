@@ -32,7 +32,13 @@ from tensor2tensor.utils import metrics
 from tensor2tensor.utils import mlperf_log
 
 import tensorflow as tf
-from tensorflow.contrib.tpu.python.tpu import tpu_config
+# pylint: disable=g-import-not-at-top
+try:
+  from tensorflow.contrib.tpu.python.tpu import tpu_config
+except ImportError:
+  # TF 2.0 doesn't ship with contrib.
+  tpu_config = None
+# pylint: enable=g-import-not-at-top
 
 
 
