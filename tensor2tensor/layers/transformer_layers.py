@@ -24,7 +24,7 @@ from tensor2tensor.layers import common_layers
 from tensor2tensor.utils import expert_utils
 from tensor2tensor.utils import mlperf_log
 
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 
 # TODO(lukaszkaiser): remove this function when not needed any more.
@@ -111,6 +111,9 @@ def transformer_prepare_encoder(inputs, target_space, hparams, features=None,
           encoder_input, inputs_position)
     else:
       encoder_input = common_attention.add_timing_signal_1d(encoder_input)
+  elif hparams.pos == "timing_from_features":
+    encoder_input = common_attention.add_timing_signals_from_features(
+        encoder_input, features, hparams.position_features)
   elif hparams.pos == "emb":
     encoder_input = common_attention.add_positional_embedding(
         encoder_input, hparams.max_length, "inputs_positional_embedding",

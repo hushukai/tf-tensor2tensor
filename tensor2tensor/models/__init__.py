@@ -44,9 +44,7 @@ from tensor2tensor.models import text_cnn
 from tensor2tensor.models import transformer
 from tensor2tensor.models import vanilla_gan
 from tensor2tensor.models import xception
-
 from tensor2tensor.models.neural_architecture_search import nas_model
-
 from tensor2tensor.models.research import adafactor_experiments
 from tensor2tensor.models.research import aligned
 from tensor2tensor.models.research import attention_lm
@@ -60,6 +58,7 @@ from tensor2tensor.models.research import moe_experiments
 from tensor2tensor.models.research import multiquery_paper
 from tensor2tensor.models.research import neural_stack
 from tensor2tensor.models.research import rl
+from tensor2tensor.models.research import shuffle_network
 from tensor2tensor.models.research import similarity_transformer
 from tensor2tensor.models.research import super_lm
 from tensor2tensor.models.research import transformer_moe
@@ -73,7 +72,6 @@ from tensor2tensor.models.research import universal_transformer
 from tensor2tensor.models.research import vqa_attention
 from tensor2tensor.models.research import vqa_recurrent_self_attention
 from tensor2tensor.models.research import vqa_self_attention
-
 from tensor2tensor.models.video import basic_deterministic
 from tensor2tensor.models.video import basic_recurrent
 from tensor2tensor.models.video import basic_stochastic
@@ -82,8 +80,10 @@ from tensor2tensor.models.video import epva
 from tensor2tensor.models.video import next_frame_glow
 from tensor2tensor.models.video import savp
 from tensor2tensor.models.video import sv2p
-
 from tensor2tensor.utils import registry
+
+
+# pylint: disable=unused-import
 
 # pylint: enable=unused-import
 
